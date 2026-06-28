@@ -25,12 +25,13 @@ class View(ft.UserControl):
         self._page.controls.append(self._title)
 
         self._ddStore = ft.Dropdown(label="Store", width=250)
+
         self._txtIntK = ft.TextField(label="K", width=100)
         self._ddNode = ft.Dropdown(label="Node", width=150, disabled=True)
 
         row1 = ft.Row([self._ddStore, self._txtIntK, self._ddNode], alignment=ft.MainAxisAlignment.CENTER,
                       vertical_alignment=ft.CrossAxisAlignment.END)
-
+        self._controller.fillDDStore()
         self._btnCreaGrafo = ft.ElevatedButton(text="Crea Grafo", on_click=self._controller.handleCreaGrafo)
         self._btnCerca = ft.ElevatedButton(text="Cerca Percorso Massimo",
                                            on_click=self._controller.handleCerca, disabled=True)
